@@ -1,9 +1,6 @@
 __author__ = 'smuralid'
 import sys
 
-# This is part 1 of insertion sort. It takes an sorted list, with the unsorted element on the right hand side corner.
-# It then inserts it in the right spot.
-
 s = int(sys.stdin.readline().strip())
 ar = [int(elem) for elem in sys.stdin.readline().split()]
 v = ar[s-1]
@@ -20,5 +17,6 @@ for i in range(1,s):
 if j == 0:
   ar[0] = v
   print (str(ar).strip('[]').replace(',',''))
+
 
 
