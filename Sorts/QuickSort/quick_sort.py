@@ -5,52 +5,18 @@ import sys
 # ar = [int(elem) for elem in sys.stdin.readline().split()]
 
 n = 7
-arr = [2,5,3,109,123,13,123,56,123,16358,123]
+arr = [2,5,3,109,123,132,13,56,123,16358,1231]
 
 
-def quick_sort(ar):
-    n = len(ar)
-    if n == 1:
-        print (ar)
-
-        return ar
-
+def quick_sort(list):
+    if list == []:
+        return []
     else:
-        p = ar[0]
-        ar_left = []
-        ar_right = []
-        for i in range(1,n):
-            if ar[i]>p:
-                ar_right.append(ar[i])
-            else:
-                ar_left.append(ar[i])
-            n_left = len(ar_left)
-            n_right = len(ar_right)
-
-            if n_left > 0:
-                ar_left_swap = quick_sort(ar_left)
-            else:
-                ar_left_swap = []
-
-            if n_right > 0:
-                ar_right_swap = quick_sort(ar_right)
-            else:
-                ar_right_swap = []
-        if ar_left_swap:
-            ar = ar_left_swap
-        else:
-            ar = []
-        ar = ar + [p]
-
-        if ar_right_swap:
-            ar = ar + ar_right_swap
-    return ar
-
+        pivot = list[0]
+        lesser = quick_sort([x for x in list[1:] if x<pivot])
+        greater = quick_sort([x for x in list[1:] if x>=pivot])
+        return lesser + [pivot] + greater
 print (quick_sort(arr))
-
-
-
-
 
 
 
