@@ -5,13 +5,14 @@ import sys
 # ar = [int(elem) for elem in sys.stdin.readline().split()]
 
 n = 7
-arr = [2,5,3,109]
+arr = [2,5,3,109,123,13,123,56,123,16358,123]
 
 
 def quick_sort(ar):
     n = len(ar)
     if n == 1:
         print (ar)
+
         return ar
 
     else:
